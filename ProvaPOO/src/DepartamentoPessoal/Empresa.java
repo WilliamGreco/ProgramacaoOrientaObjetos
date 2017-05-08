@@ -7,8 +7,8 @@ public class Empresa {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
 
-        Funcionario vetor_funcionario[] = new Funcionario[50];
-        Dependente vetor_dependente[] = new Dependente[50];
+        Funcionario vetor_funcionario[] = new Funcionario[100];
+        Dependente vetor_dependente[] = new Dependente[100];
         int main = 0, contadorF = 0, contadorD = 0, codigo = 0;
         double valores;
         String nome;
@@ -48,7 +48,7 @@ public class Empresa {
                             codigo = ler.nextInt();
                         }
                     }
-                    func.setNumFunc(codigo);
+                    func.setnumeroFuncionario(codigo);
                     System.out.println("Informe o nome do funcionario...");
                     nome = ler.next();
                     func.setNome(nome);
@@ -90,13 +90,19 @@ public class Empresa {
                 case 4:
                     System.out.println("Informe o codigo do funcionario");
                     codigo = ler.nextInt();
-                    vetor_funcionario = empresa.deleteFunc(vetor_funcionario, codigo, contadorF);
+                    vetor_funcionario = empresa.deleteF(vetor_funcionario, codigo, contadorF);
                     if (!(contadorD == 0)) {
+                        
+                        while (!empresa.analisa_codigo(vetor_funcionario, codigo, contadorF)) {
+                            System.out.println("Codigo não existe...");
+                            System.out.println("");
+                            System.out.println("Informe o codigo do funcionario");
+                            codigo = ler.nextInt();
 
                         vetor_dependente = empresa.deleteDep(vetor_dependente, codigo, contadorF);
 
                     }
-
+                    }
                     break;
                 case 5:
 
@@ -106,6 +112,7 @@ public class Empresa {
                     if (!(contadorF == 0)) {
                         while (!empresa.analisa_codigo(vetor_funcionario, codigo, contadorF)) {
                             System.out.println("Funcionario não existe...");
+                            System.out.println("");
                             System.out.println("Informe o codigo do funcionario...");
                             codigo = ler.nextInt();
                         }

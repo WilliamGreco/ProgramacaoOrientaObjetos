@@ -6,12 +6,12 @@ public class Funcionario {
     private String nome, cargo;
     private double salario;
 
-    public int getNumFunc() {
+    public int getnumeroFuncionario() {
         return numeroFuncionario;
     }
 
-    public void setNumFunc(int numFunc) {
-        this.numeroFuncionario = numFunc;
+    public void setnumeroFuncionario(int numeroFuncionario) {
+        this.numeroFuncionario = numeroFuncionario;
     }
 
     public String getNome() {
@@ -42,7 +42,7 @@ public class Funcionario {
 
         for (int x = 0; x <= contador - 1; x++) {
             if (vetor[x] != null) {
-                if (vetor[x].getNumFunc() == codigo) {
+                if (vetor[x].getnumeroFuncionario() == codigo) {
 
                     return true;
                 }
@@ -59,7 +59,7 @@ public class Funcionario {
         Funcionario obj = new Funcionario();
         for (int x = 0; x <= contador - 1; x++) {
             if (vetor[x] != null) {
-                if (vetor[x].getNumFunc() == codigo) {
+                if (vetor[x].getnumeroFuncionario() == codigo) {
                     obj = vetor[x];
 
                 }
@@ -69,11 +69,11 @@ public class Funcionario {
         return obj;
     }
 
-    public Funcionario[] deleteFunc(Funcionario vetor[], int codigo, int contador) {
+    public Funcionario[] deleteF(Funcionario vetor[], int codigo, int contador) {
 
         for (int x = 0; x <= contador - 1; x++) {
             if (vetor[x] != null) {
-                if (vetor[x].getNumFunc() == codigo) {
+                if (vetor[x].getnumeroFuncionario() == codigo) {
                     vetor[x] = null;
 
                 }
@@ -87,7 +87,7 @@ public class Funcionario {
 
         for (int x = 0; x <= contador - 1; x++) {
             if (vetor[x] != null) {
-                if (vetor[x].getFuncionario().getNumFunc() == codigo) {
+                if (vetor[x].getFuncionario().getnumeroFuncionario() == codigo) {
                     vetor[x] = null;
                 }
             }
@@ -102,7 +102,7 @@ public class Funcionario {
         for (int x = 0; x <= contador - 1; x++) {
 
             if (vetor[x] != null) {
-                if (vetor[x].getNumFunc() == codigo) {
+                if (vetor[x].getnumeroFuncionario() == codigo) {
                     vetor[x].setSalario(novoSalario);
                 }
             }
@@ -116,7 +116,7 @@ public class Funcionario {
 
         for (int x = 0; x <= contadorf - 1; x++) {
             if (vetor[x] != null) {
-                int quant = getQuantDep(vetor2, contadord, vetor[x].getNumFunc());
+                int quant = getQuantDep(vetor2, contadord, vetor[x].getnumeroFuncionario());
                 System.out.println("Nome - " + vetor[x].getNome());
                 System.out.println("Salario - " + vetor[x].getSalario());
                 System.out.println("Quantidade dependentes - " + quant);
@@ -129,7 +129,7 @@ public class Funcionario {
         int cont = 0;
         for (int x = 0; x <= contador - 1; x++) {
             if (vetor[x] != null) {
-                if (vetor[x].getFuncionario().getNumFunc() == codigo) {
+                if (vetor[x].getFuncionario().getnumeroFuncionario() == codigo) {
                     cont++;
                 }
             }
